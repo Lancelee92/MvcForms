@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,6 +29,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MvcForms</a>
+                <a class="navbar-brand" href="@Url.Action("Index", "Entries")"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -34,6 +37,9 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
+                <a href="@Url.Action("Add", "Entries")" class="btn btn-primary navbar-btn navbar-right">
+                    <span class="glyphicon glyphicon-plus"></span> Add Entry
+                </a>
             </div>
         </div>
     </nav>

@@ -30,3 +30,7 @@
 /home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/MvcForms.dll
 /home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/MvcForms.pdb
 /home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/MvcForms.csproj.CopyComplete
+/home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Entries/Add.g.cshtml.cs
+/home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Entries/Delete.g.cshtml.cs
+/home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Entries/Edit.g.cshtml.cs
+/home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Entries/Index.g.cshtml.cs
