@@ -34,3 +34,4 @@
 /home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Entries/Delete.g.cshtml.cs
 /home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Entries/Edit.g.cshtml.cs
 /home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Entries/Index.g.cshtml.cs
+/home/yc/Project/MvcForms/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Logo.g.cshtml.cs
