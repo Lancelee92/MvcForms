@@ -8,6 +8,10 @@ using Microsoft.AspNetCore;
 using Treehouse.FitnessFrog.Data;
 using Treehouse.FitnessFrog.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 namespace Treehouse.FitnessFrog.Controllers
 {
@@ -69,6 +73,15 @@ namespace Treehouse.FitnessFrog.Controllers
         [HttpPost]
         public ActionResult Add(Entry entry)
         {
+            
+            // if thre are no "Duration" field validation errors
+            //then make sure that the duration is greater than "0"
+            // if(ModelState.IsValidField('Duration'))  **for .net  **  
+            if((ModelState.GetFieldValidationState("Duration") == ModelValidationState.Valid) && entry.Duration <= 0)
+            {
+                ModelState.AddModelError("Duration", "The Duration field value must be greater than '0'");
+            }
+
             if(ModelState.IsValid)
             {
                 _entriesRepository.AddEntry(entry);
