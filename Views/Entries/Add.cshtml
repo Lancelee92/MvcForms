@@ -1,8 +1,27 @@
 ﻿@model Treehouse.FitnessFrog.Models.Entry
+@using Treehouse.FitnessFrog.Models
 
 @{
     ViewBag.Title = "Add Entry";
+
+    <!-- var selectListItems = new []
+    {
+        new SelectListItem() { Value = "1", Text = "Item 1", Selected = false },
+        new SelectListItem() { Value = "2", Text = "Item 2", Selected = true }
+    }; -->
+
+    <!-- var items = new []
+    {
+        new { Id = 1, Name = "Item 1"},
+        new { Id = 2, Name = "Item 2"}
+    };
+    var selectListItems = new SelectList(items, "Id", "Name"); -->
 }
+
+<!-- <select>
+    <option value="1">Item 1</option>
+    <option value="2" selected>Item 2</option>
+</select> -->
 
 <h2>@ViewBag.Title</h2>
 
@@ -20,7 +39,7 @@
 
             <div class="form-group">
                 @Html.LabelFor(m => m.ActivityId, "Activity ID: ", new { @class = "control-label"})
-                @Html.TextBoxFor(m => m.ActivityId, new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.ActivityId, (SelectList)ViewBag.ActivitiesSelectListItems, "", new { @class = "form-control" })
                 <!-- @Html.Label("ActivityId", "Activity ID: ", new { @class = "control-label"})
                 @Html.TextBox("ActivityId", null, new { @class = "form-control" }) -->
             </div>
@@ -34,7 +53,21 @@
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Intensity,"Intensity: ", new { @class = "control-label"})
-                @Html.TextBoxFor(m => m.Intensity, new { @class = "form-control" })
+                <div>
+                    <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.Intensity, 
+                        Entry.IntensityLevel.Low)   @Entry.IntensityLevel.Low
+                    </label>
+                    <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.Intensity, 
+                        Entry.IntensityLevel.Medium)   @Entry.IntensityLevel.Medium
+                    </label>
+                    <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.Intensity, 
+                        Entry.IntensityLevel.High)   @Entry.IntensityLevel.High
+                    </label>
+                </div>
+                <!-- @Html.TextBoxFor(m => m.Intensity, new { @class = "form-control" }) -->
                 <!-- @Html.Label("Intensity", "Intensity: ", new { @class = "control-label"})
                 @Html.TextBox("Intensity", null, new { @class = "form-control" }) -->
             </div>

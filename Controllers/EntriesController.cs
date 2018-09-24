@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore;
 using Treehouse.FitnessFrog.Data;
 using Treehouse.FitnessFrog.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Treehouse.FitnessFrog.Controllers
 {
@@ -44,9 +45,10 @@ namespace Treehouse.FitnessFrog.Controllers
         {
             var entry = new Entry()
             {
-                Date =  DateTime.Today
+                Date =  DateTime.Today,
             };
-
+            
+            ViewBag.ActivitiesSelectListItems = new SelectList(Data.Data.Activities, "Id", "Name");
             return View(entry);
         }
         // [HttpPost]
@@ -74,6 +76,7 @@ namespace Treehouse.FitnessFrog.Controllers
                 return RedirectToAction("Index");
                 //ToDo Display the entries list page
             }
+            ViewBag.ActivitiesSelectListItems = new SelectList(Data.Data.Activities, "Id", "Name");
             
             //if(Request.Method == "POST"){}
             //string date = Request.Form["Date"];
@@ -84,7 +87,7 @@ namespace Treehouse.FitnessFrog.Controllers
             // ViewBag.Exclude = ModelState["Exclude"].AttemptedValue;
             // ViewBag.Notes = ModelState["Notes"].AttemptedValue;
             
-            return View();
+            return View(entry);
         }
 
         public ActionResult Edit(int? id)
